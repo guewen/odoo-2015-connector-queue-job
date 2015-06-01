@@ -293,5 +293,6 @@ def example(session, record_id):
     if record.exists():
 *        if not record.exported:
             export(session.env['model'].browse(record_id))
+```
 
 ]
