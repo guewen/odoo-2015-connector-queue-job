@@ -202,12 +202,14 @@ a_task.delay(session, 1, max_retries=1)
 
 
 ```python
-try:
-    do_operation()
-except (socket.gaierror, socket.error, socket.timeout) as err:                                                                                              
-    raise RetryableError(                                                                                                                            
-        'A network error caused the failure of the job: '                                                                                                   
-        '%s' % err)
+@job
+def a_task(session, args):
+    try:
+        do_operation()
+    except (socket.gaierror, socket.error, socket.timeout) as err:                                                                                              
+        raise RetryableError(                                                                                                                            
+            'A network error caused the failure of the job: '                                                                                                   
+            '%s' % err)
 ```
 
 ???
