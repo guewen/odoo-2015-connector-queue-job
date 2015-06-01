@@ -56,35 +56,49 @@ class: center, middle
 
 ![Loading...](loading1.png)
 
+# Loading...
+
 ---
 class: center, middle
 
 ![Still loading...](loading2.png)
+
+# Still loading...
 
 ---
 class: center, middle
 
 ![Still loading... Please be patient.](loading3.png)
 
+# Still loading... Please be patient.
+
 ---
 class: center, middle
 
 ![Don't leave yet, it's still loading](loading4.png)
+
+# Don't leave yet, it's still loading
 
 ---
 class: center, middle
 
 ![You may not believe it, but the application is actually loading...](loading5.png)
 
+# You may not believe it, but the application is actually loading...
+
 ---
 class: center, middle
 
 ![Take a minute to get a coffee, because it's loading...](loading6.png)
 
+# Take a minute to get a coffee, because it's loading...
+
 ---
 class: center, middle
 
 ![Maybe you should consider reloading the application by pressing F5...](loading7.png)
+
+# Come on...
 
 ---
 class: center, middle, inverse
