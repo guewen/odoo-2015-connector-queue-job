@@ -155,6 +155,31 @@ a_heavy_task.delay(session, 'res.partner', 1)
 ???
 
 ---
+
+# Dequeue it!
+
+Start the server with:
+
+```python
+ODOO_CONNECTOR_CHANNELS=root:4 ./openerp-server --load=web,connector
+```
+
+???
+
+Where workers > 1 and > the number next to root, so > 4.
+But what are these channels?
+
+---
+class: inverse, center, middle
+
+# Channels
+
+
+---
+
+background-image: url(channels_simple.svg)
+
+---
 class: inverse, center, middle
 
 # Properties
