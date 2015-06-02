@@ -4,22 +4,13 @@ class: center, middle, inverse
 # A Jobs Queue for processing tasks asynchronously
 
 <!--
-Todo:
 Job patterns: 
   Try or delay: try: call() except: call.delay(); 
   Fanout: "batch" job that spawn other jobs
-start server with option load=web,connector and the env variable
-job delay
-job delay with args
-What happens when odoo crashes/stops
-transactional properties (rollback, commit)
-job failure with traceback
-channels
-channels example (schema)
 -->
 
 ---
-class: inverse
+background-image: url(camptocamp.png)
 # About us
 
 ## Guewen Baconnier
@@ -133,6 +124,7 @@ Dependency on .connector-word[connector]
 Install your addon in the connector:
 
 --
+
 Declare a job:
 
 ```python
@@ -144,7 +136,7 @@ def a_heavy_task(session, model_name, record_id):
 ```
 
 --
-Produce a job:
+Delay a job:
 
 ```python
 session = ConnectorSession.from_env(self.env)
@@ -214,7 +206,7 @@ add a schema?
 # Retries
 
 ```python
-a_task.delay(session, 1, max_retries=1)
+a_task.delay(session, 1, max_retries=3)
 ```
 --
 # Invoke a retry
@@ -236,6 +228,7 @@ def a_task(session, args):
 RetryableError or subclass
 
 ---
+class: inverse, center, middle
 # Best Practices
 ---
 
@@ -255,9 +248,9 @@ def example(session, record_id, vals):
 
 Yes:
 ```python
-@job
-def example(session, record_id):
-    export(session.env['model'].browse(record_id))
+ @job
+ def example(session, record_id):
+*    export(session.env['model'].browse(record_id))
 ```
 
 ]
@@ -282,11 +275,11 @@ def example(session, record_id):
 
 Yes:
 ```python
-@job
-def example(session, record_id):
-    record = session.env['model'].browse(record_id)
+ @job
+ def example(session, record_id):
+     record = session.env['model'].browse(record_id)
 *    if record.exists():
-        export(record)
+         export(record)
 ```
 
 ]
@@ -312,15 +305,50 @@ def example(session, record_id):
 
 Yes:
 ```python
-@job
-def example(session, record_id):
-    record = session.env['model'].browse(record_id)
-    if record.exists():
+ @job
+ def example(session, record_id):
+     record = session.env['model'].browse(record_id)
+     if record.exists():
 *        if not record.exported:
-            export(session.env['model'].browse(record_id))
+             export(session.env['model'].browse(record_id))
 ```
 
 ]
+---
+class: inverse, center, middle
+
+# Useful Patterns
+
+---
+# Fanout Job
+
+A job generating other jobs.
+
+```python
+@job
+def import_file(session, filepath):
+    with open(filepath) as f:
+        for line in f:
+            import_line.delay(session, line)
+```
+
+---
+# Try or delay
+
+If an operation failed, try it later.
+
+```python
+@job
+def do_operation(session, args):
+    # work
+
+try:
+    do_operation(session, args)
+except UserError:
+    do_operation.delay(session, args)
+```
+
+
 ---
 class: center
 background-image: url(all_sponsors.png)
