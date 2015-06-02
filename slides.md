@@ -321,3 +321,9 @@ def example(session, record_id):
 ```
 
 ]
+---
+class: center
+background-image: url(all_sponsors.png)
+
+# OCA Booth
+
