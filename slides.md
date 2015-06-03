@@ -3,12 +3,6 @@ class: center, middle, inverse
 
 # A Jobs Queue for processing tasks asynchronously
 
-<!--
-Job patterns: 
-  Try or delay: try: call() except: call.delay(); 
-  Fanout: "batch" job that spawn other jobs
--->
-
 ---
 # About us
 
@@ -17,14 +11,14 @@ Job patterns:
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
 * Connector Team leader
-* Twitter @guewenb
+* @guewenb
 ]
 
 .half-right[
 ## Leonardo Pistone
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
-* Twitter @lepistone
+* @lepistone
 ]
 
 .big-camptocamp-logo[![Camptocamp](camptocamp.png)]
@@ -45,6 +39,15 @@ class: center, middle, inverse
 ---
 name: why-sequence
 background-image: url(sequence_jobs.svg)
+
+???
+Story:
+User clicks on a button.
+Request goes to the server.
+The server works. A while.
+The user waits until the server responds.
+
+So the waiting looks like...
 
 ---
 class: center, middle
@@ -104,29 +107,40 @@ class: center, middle, inverse
 name: why-sequence2
 background-image: url(sequence_jobs2.svg)
 
+???
+
+Illustration legend:
+Now the requests of the user postpone an asynchronous job and directly returns a reponse.
+The user is able to work on another thing.
+A Connector Runner will execute the job as soon as possible.
+
 ---
 class: center, middle, inverse
 .connector-word-title[Connector]
 
 ???
 
-How do we queue in Odoo then?
+How do we do asynchronous jobs in Odoo then?
+
 Connector is an OCA addons.
 
 Used in many addons.
 Magento. Prestashop. Various connectors.
-But also some which are not connectors, addons that use only the jobs queue.
-Example: module to import large CSV files in jobs, chunk by chunk.
 
+But also some which are not connectors, addons that use only the jobs queue.
+Example: module (base_import_async) to import large CSV files in jobs, chunk by
+chunk.
+
+Tagline:
 Framework to build connectors.
 But not limited to connectors.
+It's a Jobs Queue!
+
 
 ---
 # Queue it!
 
 Dependency on .connector-word[connector]
-
-Install your addon in the connector:
 
 --
 
@@ -140,6 +154,11 @@ def a_heavy_task(session, model_name, record_id):
     # do an heavy task on record_id of model_name
 ```
 
+???
+
+Decorate a function with @job.
+The function is still callable synchronously, but also asynchrously if it is called with '.delay()'.
+
 --
 Delay a job:
 
@@ -150,6 +169,10 @@ a_heavy_task.delay(session, 'res.partner', 1)
 
 
 ???
+
+Have to build a ConnectorSession with the Odoo env.
+Then call the function with .delay().
+That's it. The job is pushed in the queue and the execution continues to the next line.
 
 ---
 
@@ -171,10 +194,22 @@ class: inverse, center, middle
 
 # Channels
 
+???
+
+Channels are related to how the jobs are executed.
+Next slide shows illustrates a story.
 
 ---
 
 background-image: url(channels_simple.svg)
+
+???
+Elements of the story:
+ * jobs importing very large files
+ * jobs making a lot of sync with magento or another shop
+ * we want to execute 3 jobs at a time at max
+ * we can't block the e-commerce sync during the import of the files
+ * so the channel for importing very large files is limited to 1 job at a time
 
 ---
 class: inverse, center, middle
@@ -192,7 +227,6 @@ a_task.delay(session, 2, priority=100)
 
 ???
 add a schema?
-tell use cases (fanout jobs, import of trees, ...)
 
 ---
 
@@ -230,7 +264,9 @@ def a_task(session, args):
 
 ???
 
-RetryableError or subclass
+Usually, when an exception happens during the execution of a job, the job is set as failed. Failed jobs are shown on a view in Odoo with their traceback so they can be investigated.
+Though for some exceptions, we know that the exception is temporary and the job could work later, such as a timeout.
+We can catch such exceptions and instead raise a RetryError, which will put the job in the queue again some time later.
 
 ---
 class: inverse, center, middle
@@ -260,6 +296,10 @@ Yes:
 
 ]
 
+???
+The values of a record could change between the creation of a job and its execution.
+Read the records again!
+
 ---
 
 .left-column[
@@ -288,6 +328,10 @@ Yes:
 ```
 
 ]
+
+???
+
+A job can refer to a deleted record, check if it exists.
 
 ---
 
@@ -319,6 +363,11 @@ Yes:
 ```
 
 ]
+
+???
+
+Always think what will happen if the same job is executed 2 times, it should not break anything.
+
 ---
 class: inverse, center, middle
 
@@ -337,6 +386,13 @@ def import_file(session, filepath):
             import_line.delay(session, line)
 ```
 
+???
+
+Very often used when we have a batch of records to import or export.
+For instance, we get all the lines of a file and import them separately.
+Or we get all the modified ids in a period and we delay a job for each id.
+Typically jobs with a high priority so there are executed before the imports of the records themselves.
+
 ---
 # Try or delay
 
@@ -349,9 +405,14 @@ def do_operation(session, args):
 
 try:
     do_operation(session, args)
-except UserError:
-    do_operation.delay(session, args)
+except TimeoutError:
+    do_operation.delay(session, args, eta=10*60)
+
 ```
+???
+
+The user clicks on a button and the synchronous operation failed, instead of
+returning the error to the user, we postpone the task later.
 
 ---
 # Extract highly concurrent tasks

@@ -14,7 +14,7 @@
    id="svg3418"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="channels.svg">
+   sodipodi:docname="channels_simple.svg">
   <defs
      id="defs3420" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="526.23624"
-     inkscape:cy="582.88413"
+     inkscape:zoom="0.5"
+     inkscape:cx="348.46144"
+     inkscape:cy="491.01016"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="false"
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1068,8 +1068,8 @@
        id="rect3733-7-2"
        width="55.833332"
        height="40.104168"
-       x="774.50977"
-       y="206.30411"
+       x="730.50977"
+       y="205.94792"
        rx="10"
        ry="10" />
     <rect
@@ -1077,8 +1077,8 @@
        id="rect3733-7-2-4"
        width="55.833332"
        height="40.104168"
-       x="864.45209"
-       y="206.30411"
+       x="820.29651"
+       y="205.94792"
        rx="10"
        ry="10" />
     <rect
@@ -1188,5 +1188,14 @@
          y="-209.82913"
          x="902.13086"
          sodipodi:role="line" /></text>
+    <rect
+       style="opacity:0.80000000000000004;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#664444;stroke-width:3.20000004999999987;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:25.60000038000000089, 12.80000019000000044;stroke-dashoffset:0"
+       id="rect3733-7-2-9"
+       width="55.833332"
+       height="40.104168"
+       x="910.08325"
+       y="205.94792"
+       rx="10"
+       ry="10" />
   </g>
 </svg>
