@@ -98,7 +98,7 @@ class: center, middle
 ---
 class: center, middle, inverse
 
-# Better
+# If we can't make computers faster, we still have solutions
 
 ---
 name: why-sequence2
