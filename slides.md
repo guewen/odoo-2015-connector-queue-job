@@ -10,19 +10,24 @@ Job patterns:
 -->
 
 ---
-background-image: url(camptocamp.png)
 # About us
 
+.half-left[
 ## Guewen Baconnier
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
 * Connector Team leader
 * Twitter @guewenb
+]
 
+.half-right[
 ## Leonardo Pistone
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
 * Twitter @lepistone
+]
+
+.big-camptocamp-logo[![Camptocamp](camptocamp.png)]
 
 ---
 class: center, middle
