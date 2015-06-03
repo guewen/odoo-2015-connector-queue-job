@@ -218,11 +218,13 @@ class: inverse, center, middle
 
 ---
 
+background-image: url(job_priority.svg)
 # Priority
 
 ```python
-a_task.delay(session, 1, priority=10)
-a_task.delay(session, 2, priority=100)
+a_task.delay(session, 1)  # default is 10
+a_task.delay(session, 2, priority=50)
+a_task.delay(session, 10, priority=999)
 ```
 
 ???
@@ -230,11 +232,13 @@ add a schema?
 
 ---
 
+background-image: url(job_eta.svg)
 # ETA
 
 ```python
-a_task.delay(session, 1, eta=60*60)
-a_task.delay(session, 2, eta=datetime.now() + timedelta(days=1))
+a_task.delay(session, 1)  # A
+a_task.delay(session, 1, eta=6*60*60)  # B
+a_task.delay(session, 2, eta=datetime.now() + timedelta(days=1))  # C
 ```
 
 ???
