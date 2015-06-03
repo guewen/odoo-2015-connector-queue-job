@@ -353,6 +353,19 @@ except UserError:
     do_operation.delay(session, args)
 ```
 
+---
+# Extract highly concurrent tasks
+
+And put them in a one-by-one channel.
+
+
+
+???
+
+Story: a lot of users create account moves which are configured to be validated
+automatically. Each transaction tries to get a sequence and users get concurrent transaction errors.
+
+Solution: extract the validation part in an asychronous job, so users create the move and continue to work. The jobs are executed one by one in a channel so we never have concurrent accesses.
 
 ---
 class: center
