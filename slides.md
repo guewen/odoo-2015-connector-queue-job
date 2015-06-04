@@ -46,6 +46,9 @@ class: center, middle
 
 # Humans want them to be fast!
 
+???
+
+more precisely, they do not want to wait
 
 ---
 class: center, middle, inverse
@@ -64,6 +67,11 @@ The server works. A while.
 The user waits until the server responds.
 
 So the waiting looks like...
+
+???
+
+Confirm a timesheet
+Import of a csv file
 
 ---
 class: center, middle
@@ -473,7 +481,10 @@ Solution: extract the validation part in an asychronous job, so users create the
 
 ---
 class: center
-background-image: url(all_sponsors.png)
 
-# OCA Booth
+# Thanks!
+--
 
+## OCA Sponsors
+
+![OCA Sponsors](all_sponsors.png)
