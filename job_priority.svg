@@ -31,9 +31,9 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1596"
-     inkscape:window-height="789"
+     inkscape:window-height="807"
      inkscape:window-x="0"
-     inkscape:window-y="90"
+     inkscape:window-y="72"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata3423">
@@ -1208,26 +1208,20 @@
          id="flowPara4502" /></flowRoot>    <text
        xml:space="preserve"
        style="font-size:30.19854927px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-       x="509.36438"
+       x="199.50113"
        y="676.00336"
        id="text5368-0-0-2"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="509.36438"
+         x="199.50113"
          y="676.00336"
          style="font-size:72px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:center;text-anchor:middle;fill:#664444;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
          id="tspan9098-8">Priority</tspan><tspan
          sodipodi:role="line"
-         x="509.36438"
+         x="199.50113"
          y="766.00336"
          style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#664444;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
          id="tspan4525" /></text>
-    <path
-       style="opacity:0.8;fill:#664444;fill-opacity:1;stroke:none"
-       d="m 317.75101,655.69823 c 0,3.11625 -2.50875,5.625 -5.625,5.625 l -162.3258,0 0,21.51563 -59.625002,-27 -0.6327,0 0.28125,-0.1395 -0.28125,-0.1395 0.6327,0 59.625002,-27 0,21.51563 162.3258,0 c 3.11625,0 5.625,2.50875 5.625,5.625 z"
-       id="path6874-75-1-7-2"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cscccccccccscc" />
     <g
        id="g4653"
        transform="translate(0,-8.792726)">

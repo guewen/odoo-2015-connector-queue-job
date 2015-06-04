@@ -241,6 +241,10 @@ background-image: url(channels_simple.svg)
 
 ???
 
+It's only an upper limit, not a priority,
+It does not say when it will be run.
+To do that we have properties.
+
 ---
 class: inverse, center, middle
 
@@ -252,13 +256,12 @@ background-image: url(job_priority.svg)
 # Priority
 
 ```python
-a_task.delay(session, 1)  # default is 10
-a_task.delay(session, 2, priority=50)
-a_task.delay(session, 10, priority=999)
+import_order.delay(session, 1)  # default is 10
+import_order.delay(session, 2, priority=50)
+import_order.delay(session, 10, priority=999)
 ```
 
 ???
-add a schema?
 
 ---
 
@@ -266,20 +269,19 @@ background-image: url(job_eta.svg)
 # ETA
 
 ```python
-a_task.delay(session, 1)  # A
-a_task.delay(session, 1, eta=6*60*60)  # B
-a_task.delay(session, 2, eta=datetime.now() + timedelta(days=1))  # C
+import_order.delay(session, 1)  # A
+import_order.delay(session, 1, eta=6*60*60)  # B
+import_order.delay(session, 2, eta=datetime.now() + timedelta(days=1))  # C
 ```
 
 ???
-add a schema?
 
 ---
 
 # Retries
 
 ```python
-a_task.delay(session, 1, max_retries=3)
+import_order.delay(session, 1, max_retries=3)
 ```
 --
 # Invoke a retry
