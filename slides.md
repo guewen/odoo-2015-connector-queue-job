@@ -223,19 +223,23 @@ class: inverse, center, middle
 ???
 
 Channels are related to how the jobs are executed.
-Next slide shows illustrates a story.
 
----
-
-background-image: url(channels_simple.svg)
-
-???
 Elements of the story:
  * jobs importing very large files
  * jobs making a lot of sync with magento or another shop
  * we want to execute 3 jobs at a time at max
  * we can't block the e-commerce sync during the import of the files
  * so the channel for importing very large files is limited to 1 job at a time
+
+Use cases:
+ * Limit the concurrency of tasks to prevent to choke the queue
+ * Prevent concurrent transaction errors be executing the jobs one-by-one in a channel
+
+---
+
+background-image: url(channels_simple.svg)
+
+???
 
 ---
 class: inverse, center, middle
