@@ -276,6 +276,10 @@ import_order.delay(session, 2, eta=datetime.now() + timedelta(days=1))  # C
 
 ???
 
+* start time of a job, not the end
+* only chooses which job to run when there is place
+* make an effort to make the deadline but not able to make promises
+
 ---
 
 # Retries
@@ -289,7 +293,7 @@ import_order.delay(session, 1, max_retries=3)
 
 ```python
 @job
-def a_task(session, args):
+def import_order(session, args):
     try:
         do_operation()
     except (socket.gaierror, socket.error, socket.timeout) as err:                                                                                              
@@ -299,6 +303,9 @@ def a_task(session, args):
 ```
 
 ???
+
+We should also decides what happens when there is an error.
+
 
 Usually, when an exception happens during the execution of a job, the job is set as failed. Failed jobs are shown on a view in Odoo with their traceback so they can be investigated.
 Though for some exceptions, we know that the exception is temporary and the job could work later, such as a timeout.
