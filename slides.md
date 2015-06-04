@@ -10,7 +10,7 @@ class: center, middle, inverse
 ## Guewen Baconnier
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
-* Connector Team leader
+* Connector author
 * @guewenb
 ]
 
@@ -22,6 +22,16 @@ class: center, middle, inverse
 ]
 
 .big-camptocamp-logo[![Camptocamp](camptocamp.png)]
+
+???
+
+
+I'm Guewen Baconnier, I work as a developer in Camptocamp. I'm also an active
+contributor of the OCA.  I'm more into thinking than into speaking... and I'm
+not very good as telling stories. So please welcome my colleague Leonardo who
+will speak very better than I could.
+
+
 
 ---
 class: center, middle
