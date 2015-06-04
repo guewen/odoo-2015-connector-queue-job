@@ -23,8 +23,7 @@ class: center, middle, inverse
 ## Leonardo Pistone
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
-* ![Twitter](twitter.gif) @lepistone
-* ![GitHub](github.png) @lepistone
+* ![Twitter](twitter.gif) ![GitHub](github.png) @lepistone
 
 ]
 
@@ -200,13 +199,15 @@ That's it. The job is pushed in the queue and the execution continues to the nex
 
 Start the server with:
 
-```python
+```sh
 ODOO_CONNECTOR_CHANNELS=root:4 ./openerp-server --load=web,connector --workers=8
 ```
--- 
 
-```python
-ODOO_CONNECTOR_CHANNELS=root:4,root.csv:1,root.magento:3 ./openerp-server --load=web,connector --workers=8
+--
+
+```sh
+ODOO_CONNECTOR_CHANNELS=root:4,root.csv:1,root.magento:3 \
+    ./openerp-server --load=web,connector --workers=8
 ```
 
 ???
