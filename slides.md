@@ -200,14 +200,14 @@ That's it. The job is pushed in the queue and the execution continues to the nex
 Start the server with:
 
 ```sh
-ODOO_CONNECTOR_CHANNELS=root:3 ./openerp-server --load=web,connector --workers=8
+ODOO_CONNECTOR_CHANNELS=root:2 ./openerp-server --load=web,connector --workers=4
 ```
 
 --
 
 ```sh
 ODOO_CONNECTOR_CHANNELS=root:3,root.csv:1,root.magento:3 \
-    ./openerp-server --load=web,connector --workers=8
+    ./openerp-server --load=web,connector --workers=4
 ```
 
 ???
