@@ -118,7 +118,10 @@ class: center, middle
 ---
 class: center, middle, inverse
 
-# If we can't make computers faster, we still have solutions
+# We can try to save a few seconds
+--
+
+# But we have more radical solutions
 
 ---
 name: why-sequence2
@@ -198,7 +201,12 @@ That's it. The job is pushed in the queue and the execution continues to the nex
 Start the server with:
 
 ```python
-ODOO_CONNECTOR_CHANNELS=root:4 ./openerp-server --load=web,connector
+ODOO_CONNECTOR_CHANNELS=root:4 ./openerp-server --load=web,connector --workers=8
+```
+-- 
+
+```python
+ODOO_CONNECTOR_CHANNELS=root:4,root.csv:1,root.magento:3 ./openerp-server --load=web,connector --workers=8
 ```
 
 ???

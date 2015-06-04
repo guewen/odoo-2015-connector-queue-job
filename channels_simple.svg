@@ -31,9 +31,9 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1596"
-     inkscape:window-height="789"
+     inkscape:window-height="807"
      inkscape:window-x="0"
-     inkscape:window-y="90"
+     inkscape:window-y="72"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata3423">
@@ -988,18 +988,18 @@
     <text
        xml:space="preserve"
        style="font-size:30.19854927px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
-       x="257.48627"
-       y="-208.42355"
+       x="235.48627"
+       y="-210.42355"
        id="text5368-3-0-3-35-4"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan5370-6-8-9-4-8"
-         x="257.48627"
-         y="-208.42355"
-         style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#664444;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu">import.csv</tspan><tspan
+         x="235.48627"
+         y="-210.42355"
+         style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#664444;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+         id="tspan3185">csv</tspan><tspan
          sodipodi:role="line"
-         x="257.48627"
-         y="-148.42355"
+         x="235.48627"
+         y="-150.42355"
          style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;text-anchor:middle;fill:#664444;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
          id="tspan5376-2-1-20-1-8" /></text>
     <text
