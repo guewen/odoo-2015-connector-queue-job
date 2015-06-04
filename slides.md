@@ -3,6 +3,10 @@ class: center, middle, inverse
 
 # A Jobs Queue for processing tasks asynchronously
 
+## Guewen Baconnier & Leonardo Pistone
+
+## Camptocamp
+
 ---
 # About us
 
@@ -11,14 +15,17 @@ class: center, middle, inverse
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
 * Connector author
-* @guewenb
+* ![Twitter](twitter.gif) @guewenb
+* ![GitHub](github.png) @guewen
 ]
 
 .half-right[
 ## Leonardo Pistone
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
-* @lepistone
+* ![Twitter](twitter.gif) @lepistone
+* ![GitHub](github.png) @lepistone
+
 ]
 
 .big-camptocamp-logo[![Camptocamp](camptocamp.png)]
