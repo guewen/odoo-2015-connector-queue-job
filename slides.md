@@ -15,19 +15,19 @@ class: center, middle, inverse
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
 * Connector author
-* ![Twitter](twitter.gif) @guewenb
-* ![GitHub](github.png) @guewen
+* ![Twitter](images/twitter.gif) @guewenb
+* ![GitHub](images/github.png) @guewen
 ]
 
 .half-right[
 ## Leonardo Pistone
 * Developer @ Camptocamp
 * OCA committer, OCA Delegate
-* ![Twitter](twitter.gif) ![GitHub](github.png) @lepistone
+* ![Twitter](images/twitter.gif) ![GitHub](images/github.png) @lepistone
 
 ]
 
-.big-camptocamp-logo[![Camptocamp](camptocamp.png)]
+.big-camptocamp-logo[![Camptocamp](images/camptocamp.png)]
 
 ???
 
@@ -57,7 +57,7 @@ class: center, middle, inverse
 
 ---
 name: why-sequence
-background-image: url(sequence_jobs.svg)
+background-image: url(images/sequence_jobs.svg)
 
 ???
 Story:
@@ -76,49 +76,49 @@ Import of a csv file
 ---
 class: center, middle
 
-![Loading...](loading1.png)
+![Loading...](images/loading1.png)
 
 # Loading...
 
 ---
 class: center, middle
 
-![Still loading...](loading2.png)
+![Still loading...](images/loading2.png)
 
 # Still loading...
 
 ---
 class: center, middle
 
-![Still loading... Please be patient.](loading3.png)
+![Still loading... Please be patient.](images/loading3.png)
 
 # Still loading... Please be patient.
 
 ---
 class: center, middle
 
-![Don't leave yet, it's still loading](loading4.png)
+![Don't leave yet, it's still loading](images/loading4.png)
 
 # Don't leave yet, it's still loading
 
 ---
 class: center, middle
 
-![You may not believe it, but the application is actually loading...](loading5.png)
+![You may not believe it, but the application is actually loading...](images/loading5.png)
 
 # You may not believe it, but the application is actually loading...
 
 ---
 class: center, middle
 
-![Take a minute to get a coffee, because it's loading...](loading6.png)
+![Take a minute to get a coffee, because it's loading...](images/loading6.png)
 
 # Take a minute to get a coffee, because it's loading...
 
 ---
 class: center, middle
 
-![Maybe you should consider reloading the application by pressing F5...](loading7.png)
+![Maybe you should consider reloading the application by pressing F5...](images/loading7.png)
 
 # Come on...
 
@@ -132,7 +132,7 @@ class: center, middle, inverse
 
 ---
 name: why-sequence2
-background-image: url(sequence_jobs2.svg)
+background-image: url(images/sequence_jobs2.svg)
 
 ???
 
@@ -245,7 +245,7 @@ Use cases:
 
 ---
 
-background-image: url(channels_simple.svg)
+background-image: url(images/channels_simple.svg)
 
 ???
 
@@ -260,7 +260,7 @@ class: inverse, center, middle
 
 ---
 
-background-image: url(job_priority.svg)
+background-image: url(images/job_priority.svg)
 # Priority
 
 ```python
@@ -273,7 +273,7 @@ import_order.delay(session, 10, priority=999)
 
 ---
 
-background-image: url(job_eta.svg)
+background-image: url(images/job_eta.svg)
 # ETA
 
 ```python
@@ -487,4 +487,4 @@ class: center
 
 ## OCA Sponsors
 
-![OCA Sponsors](all_sponsors.png)
+![OCA Sponsors](images/all_sponsors.png)
