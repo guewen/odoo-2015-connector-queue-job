@@ -145,6 +145,8 @@ A Connector Runner will execute the job as soon as possible.
 class: center, middle, inverse
 .connector-word-title[Connector]
 
+odoo-connector.com
+
 ???
 
 How do we do asynchronous jobs in Odoo then?
